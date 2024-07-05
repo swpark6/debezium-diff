@@ -26,9 +26,13 @@
   "author": "swpark6",
   "license": "ISC",
   "devDependencies": {
+    "@types/deep-diff": "^1.0.5",
     "@types/node": "^20.14.9",
     "@types/vscode": "^1.91.0",
     "typescript": "^5.5.3",
     "vscode": "^1.1.37"
+  },
+  "dependencies": {
+    "deep-diff": "^1.0.2"
   }
 }
