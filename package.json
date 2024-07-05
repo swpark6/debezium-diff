@@ -6,6 +6,7 @@
     "type": "git",
     "url": "git://github.com/swpark/debezium-diff.git"
   },
+  "publisher": "swpark6",
   "main": "out/extension.js",
   "contributes": {
     "commands": [
@@ -18,15 +19,14 @@
   "scripts": {
     "vscode:prepublish": "pnpm run compile",
     "compile": "tsc -p ./",
-    "package": "pnpm vsce package --no-dependencies",
-    "publish": "pnpm vsce publish --no-dependencies"
+    "package": "pnpm vsce package",
+    "publish": "pnpm vsce publish"
   },
   "engines": {
     "vscode": "^1.91.0"
   },
   "activationEvents": [
-    "onLanguage:json",
-    "onCommand:debezium-json-diff-viewer.viewBeforeAfterDiff"
+    "onLanguage:json"
   ],
   "keywords": [],
   "author": "swpark6",
