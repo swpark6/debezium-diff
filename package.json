@@ -1,6 +1,6 @@
 {
   "name": "debezium-diff",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "repository": {
     "type": "git",
@@ -17,10 +17,11 @@
     ]
   },
   "scripts": {
-    "vscode:prepublish": "pnpm run compile",
+    "vscode:prepublish": "npm run esbuild-base -- --minify",
+    "esbuild-base": "esbuild ./src/extension.ts --bundle --outfile=out/main.js --external:vscode --format=cjs --platform=node",
     "compile": "tsc -p ./",
-    "package": "pnpm vsce package",
-    "publish": "pnpm vsce publish"
+    "package": "pnpm vsce package --no-dependencies",
+    "publish": "pnpm vsce publish --no-dependencies"
   },
   "engines": {
     "vscode": "^1.91.0"
@@ -35,6 +36,7 @@
     "@types/deep-diff": "^1.0.5",
     "@types/node": "^20.14.9",
     "@types/vscode": "^1.91.0",
+    "esbuild": "^0.23.0",
     "typescript": "^5.5.3",
     "vsce": "^2.15.0",
     "vscode": "^1.1.37"
