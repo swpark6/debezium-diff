@@ -6,7 +6,7 @@
   "contributes": {
     "commands": [
       {
-        "command": "debezium-json-viewer.viewBeforeAfter",
+        "command": "debezium-json-diff-viewer.viewBeforeAfterDiff",
         "title": "View Debezium Before and After"
       }
     ]
@@ -19,7 +19,8 @@
     "vscode": "^1.1.37"
   },
   "activationEvents": [
-    "onLanguage:json"
+    "onLanguage:json",
+    "onCommand:debezium-json-diff-viewer.viewBeforeAfterDiff"
   ],
   "keywords": [],
   "author": "swpark6",
