@@ -2,6 +2,10 @@
   "name": "debezium-diff",
   "version": "1.0.0",
   "description": "",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/swpark/debezium-diff.git"
+  },
   "main": "out/extension.js",
   "contributes": {
     "commands": [
@@ -13,10 +17,12 @@
   },
   "scripts": {
     "vscode:prepublish": "pnpm run compile",
-    "compile": "tsc -p ./"
+    "compile": "tsc -p ./",
+    "package": "pnpm vsce package --no-dependencies",
+    "publish": "pnpm vsce publish --no-dependencies"
   },
   "engines": {
-    "vscode": "^1.1.37"
+    "vscode": "^1.91.0"
   },
   "activationEvents": [
     "onLanguage:json",
@@ -30,6 +36,7 @@
     "@types/node": "^20.14.9",
     "@types/vscode": "^1.91.0",
     "typescript": "^5.5.3",
+    "vsce": "^2.15.0",
     "vscode": "^1.1.37"
   },
   "dependencies": {
