@@ -49,9 +49,11 @@ export function activate(context: vscode.ExtensionContext) {
         }
 
         try {
-            if (jsonData.before && jsonData.after) {
-                const diff = DeepDiff.diff(jsonData.before, jsonData.after);
-                const formattedDiff = formatDiff(jsonData.before, jsonData.after, diff);
+            const before = jsonData.before ?? {};
+            const after = jsonData.after ?? {};
+            if (before && after) {
+                const diff = DeepDiff.diff(before, after);
+                const formattedDiff = formatDiff(before, after, diff);
                 if (panel) {
                     panel.webview.html = getWebviewContent(`<pre>${formattedDiff}</pre>`);
                 }
