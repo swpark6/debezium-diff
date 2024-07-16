@@ -4,7 +4,7 @@
   "description": "",
   "repository": {
     "type": "git",
-    "url": "git://github.com/swpark/debezium-diff.git"
+    "url": "git://github.com/swpark6/debezium-diff.git"
   },
   "publisher": "swpark6",
   "main": "out/extension.js",
