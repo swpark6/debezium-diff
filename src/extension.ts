@@ -31,6 +31,8 @@ export function activate(context: vscode.ExtensionContext) {
             context.subscriptions
           );
         }
+
+        await updateWebviewContent(document.getText());
       }
     }
   );
